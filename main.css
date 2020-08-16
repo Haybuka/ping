@@ -24,24 +24,56 @@ section {
 }
 
 input {
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 20px;
     border: none;
 }
 
+form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, minmax(0, auto));
+
+    grid-gap: 10px;
+}
+
 input[type="email"] {
     border: 1px solid var(--grey);
-    width: 25%;
+    grid-column: 5/9;
 }
 
 input[type="submit"] {
     background: var(--color);
     color: #fff;
     font-weight: 600;
-    width: 10%;
+    cursor: pointer;
+    grid-column: 9/11;
 }
 
+section img {
+    width: 100%;
+}
 
+aside ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+aside li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 20px;
+    border-radius: 50%;
+    padding: 10px 12.5px;
+    border: 1px solid var(--grey);
+}
+
+aside li i {
+    color: var(--color);
+}
 
 h1 {
     font-weight: normal;
@@ -56,4 +88,20 @@ p {
 span {
     font-weight: bold;
     color: var(--paleColor);
+}
+
+footer {
+    margin-top: 1em;
+}
+
+@media screen and (max-width:600px) {
+    input[type="email"] {
+        grid-row: 1/2;
+        grid-column: 1/13;
+    }
+
+    input[type="submit"] {
+        grid-row: 2/3;
+        grid-column: 1/13;
+    }
 }
