@@ -7,7 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <!-- github Link : https://github.com/Haybuka/ping.git -->
   <title>Frontend Mentor | Ping coming soon page</title>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -37,6 +37,7 @@
       <p> Subscribe and get notified</p>
       <form action="">
         <input type="email" name="" id="" placeholder="your email address" required>
+        <small id="log"></small>
         <input type="submit" value="Notify Me" class="">
       </form>
     </section>
@@ -67,5 +68,27 @@
     </p>
   </footer>
 </body>
+<script>
+  let form = document.querySelector('form');
+  let submit = form.querySelector('input[type="submit"]')
+  let mail = form.querySelector('input[type="email"]');
+  let logerror = form.querySelector('#log')
+
+  submit.addEventListener("click", function (e) {
+    if (mail.value.trim().length <= 0) {
+      logerror.classList.add('error');
+      logerror.textContent = " \"Whoops! It looks like you forgot to add your email\""
+    } else if (mail.value.trim().length >= 0) {
+      logerror.classList.remove('error');
+      if (!mail.value.trim().includes('@')) {
+        logerror.classList.add('error');
+        logerror.textContent = " \"Please provide a valid email address\""
+      }
+    }
+
+
+    console.log('clicked')
+  });
+</script>
 
 </html>

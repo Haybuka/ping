@@ -37,6 +37,19 @@ form {
     grid-gap: 10px;
 }
 
+#log {
+    display: none;
+    grid-column: 5/9;
+    grid-row: 2/3;
+}
+
+#log.error {
+    display: block;
+    color: red;
+    margin: 0;
+    text-align: left;
+}
+
 input[type="email"] {
     border: 1px solid var(--grey);
     grid-column: 5/9;
@@ -103,5 +116,19 @@ footer {
     input[type="submit"] {
         grid-row: 2/3;
         grid-column: 1/13;
+    }
+
+    #log {
+        display: none;
+        grid-column: 1/13;
+        grid-row: 3/4;
+
+    }
+
+    #log.error {
+        display: block;
+        color: red;
+        text-align: center;
+        font-weight: 300;
     }
 }
