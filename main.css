@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color: hsl(223, 87%, 63%);
+    --grey: hsl(0, 0%, 59%);
+    --paleColor: hsl(209, 33%, 12%);
+}
+
+body {
+    font-size: 20px;
+    color: var(--grey);
+}
+
+main {
+    text-align: center;
+    overflow: hidden;
+}
+
+header,
+section {
+    margin-top: 2em;
+}
+
+input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+input[type="email"] {
+    border: 1px solid var(--grey);
+    width: 25%;
+}
+
+input[type="submit"] {
+    background: var(--color);
+    color: #fff;
+    font-weight: 600;
+    width: 10%;
+}
+
+
+
+h1 {
+    font-weight: normal;
+    font-size: 2em;
+    color: var(--grey);
+}
+
+p {
+    color: var(--paleColor);
+}
+
+span {
+    font-weight: bold;
+    color: var(--paleColor);
+}
